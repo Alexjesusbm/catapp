@@ -2,16 +2,23 @@ import axios from 'axios';
 
 // Configuração do cliente Axios
 const apiClient = axios.create({
-  baseURL: 'https://api.thecatapi.com/v1', // Base URL para todas as chamadas à API
+  baseURL: 'https://api.thecatapi.com/v1',
   headers: {
-    'live_9kcr2kySHsMP0hBPdSibgoFEpNXbEFem2V8WFerPMB8SKbSrjLiDbJLw6fnzEWrP': process.env.NEXT_PUBLIC_CAT_API_KEY, // Chave de API para autenticação
+    'x-api-key': process.env.NEXT_PUBLIC_CAT_API_KEY!,
   },
 });
 
-// Função para buscar gatos
+// Buscar lista de gatos
 export const fetchCats = async (limit: number = 10) => {
   const response = await apiClient.get('/images/search', {
-    params: { limit }, // Passa o limite como parâmetro de consulta (query string)
+    params: { limit, has_breeds: 1 }, // Inclui apenas gatos com raça
   });
-  return response.data; // Retorna os dados da resposta
+  return response.data;
+};
+
+
+// Buscar detalhes de um gato pelo ID
+export const fetchCatById = async (id: string) => {
+  const response = await apiClient.get(`/images/${id}`);
+  return response.data;
 };
