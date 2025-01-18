@@ -1,42 +1,41 @@
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-* {
-  box-sizing: border-box;
-  padding: 0;
+/* Reset básico para garantir consistência entre navegadores */
+*, *::before, *::after {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+/* Definições globais de tipografia e fundo */
+html, body {
+  height: 100%;
+  font-family: 'Arial', sans-serif; /* ou outra fonte */
+  background-color: #f8f9fa; /* Cor de fundo */
+  color: #333; /* Cor do texto */
+}
+
+/* Títulos */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  margin: 0 0 1rem 0;
+}
+
+/* Parágrafos */
+p {
+  line-height: 1.6;
+  margin: 0 0 1rem 0;
+}
+
+/* Links */
 a {
-  color: inherit;
   text-decoration: none;
+  color: #0070f3; /* Cor padrão dos links */
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+a:hover {
+  text-decoration: underline;
+}
+
+#title{
+  margin: 20px;
+  text-align: center;
 }
