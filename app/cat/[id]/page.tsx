@@ -15,7 +15,7 @@ interface CatDetails {
   }[];
 }
 
-export default function Produto() {
+export default function Dadosgato() {
   const { id } = useParams(); // Obtém o ID do gato na URL
   const [cat, setCat] = useState<CatDetails | null>(null);
 
@@ -30,7 +30,7 @@ export default function Produto() {
   if (!cat) return <p>Carregando...</p>;
 
   return (
-    <div>
+    <div className="cat-details-page">
       <h1>{cat.breeds ? cat.breeds[0].name : 'Nome não disponível'}</h1>
       <img src={cat.url} alt="Gato" style={{ width: '400px' }} />
       {cat.breeds && (

@@ -10,7 +10,7 @@ const apiClient = axios.create({
 });
 
 // Buscar lista de gatos
-export const fetchCats = async (limit: number = 10) => {
+export const fetchCats = async (limit: number = 9) => {
   const response = await apiClient.get('/images/search', {
     params: { limit, has_breeds: 1 }, // Apenas gatos com raças
   });

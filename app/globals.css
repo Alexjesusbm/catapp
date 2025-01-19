@@ -9,8 +9,24 @@
 html, body {
   height: 100%;
   font-family: 'Arial', sans-serif; /* ou outra fonte */
-  background-color: #f8f9fa; /* Cor de fundo */
   color: #333; /* Cor do texto */
+  background-image: url('/fundo.jpeg');
+  background-size: cover; /* Ajusta para cobrir toda a área visível */
+  background-repeat:repeat; /* Impede repetição da imagem */
+  background-position: center; /* Centraliza a imagem */
+  margin: 0; /* Remove margens padrão */
+}
+
+.cat-details-page {
+  text-align: center;
+  align-items: center;
+ 
+  padding: 20px;
+}
+
+.cat-details-page h1 {
+  color: #333; /* Cor específica para os títulos dessa página */
+  text-align: center;
 }
 
 /* Títulos */
@@ -28,7 +44,7 @@ p {
 /* Links */
 a {
   text-decoration: none;
-  color: #0070f3; /* Cor padrão dos links */
+  color: #0077ff; /* Cor padrão dos links */
 }
 
 a:hover {
